@@ -166,7 +166,6 @@ int mlx_astype(
 int mlx_atleast_1d(mlx_array* res, const mlx_array a, const mlx_stream s);
 int mlx_atleast_2d(mlx_array* res, const mlx_array a, const mlx_stream s);
 int mlx_atleast_3d(mlx_array* res, const mlx_array a, const mlx_stream s);
-int mlx_bartlett(mlx_array* res, int M, const mlx_stream s);
 int mlx_bitwise_and(
     mlx_array* res,
     const mlx_array a,
@@ -183,7 +182,6 @@ int mlx_bitwise_xor(
     const mlx_array a,
     const mlx_array b,
     const mlx_stream s);
-int mlx_blackman(mlx_array* res, int M, const mlx_stream s);
 int mlx_block_masked_mm(
     mlx_array* res,
     const mlx_array a,
@@ -364,7 +362,6 @@ int mlx_dequantize(
     mlx_optional_int group_size,
     mlx_optional_int bits,
     const char* mode,
-    const mlx_array global_scale /* may be null */,
     mlx_optional_dtype dtype,
     const mlx_stream s);
 int mlx_diag(mlx_array* res, const mlx_array a, int k, const mlx_stream s);
@@ -501,8 +498,6 @@ int mlx_hadamard_transform(
     const mlx_array a,
     mlx_optional_float scale,
     const mlx_stream s);
-int mlx_hamming(mlx_array* res, int M, const mlx_stream s);
-int mlx_hanning(mlx_array* res, int M, const mlx_stream s);
 int mlx_identity(mlx_array* res, int n, mlx_dtype dtype, const mlx_stream s);
 int mlx_imag(mlx_array* res, const mlx_array a, const mlx_stream s);
 int mlx_inner(
@@ -795,8 +790,6 @@ int mlx_qqmm(
     mlx_optional_int group_size,
     mlx_optional_int bits,
     const char* mode,
-    const mlx_array global_scale_x /* may be null */,
-    const mlx_array global_scale_w /* may be null */,
     const mlx_stream s);
 int mlx_quantize(
     mlx_vector_array* res,
@@ -804,7 +797,6 @@ int mlx_quantize(
     mlx_optional_int group_size,
     mlx_optional_int bits,
     const char* mode,
-    const mlx_array global_scale /* may be null */,
     const mlx_stream s);
 int mlx_quantized_matmul(
     mlx_array* res,
